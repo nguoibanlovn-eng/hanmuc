@@ -106,7 +106,6 @@
     </header>
 
     <main class="shell-body">
-      <!-- TODO: DÁN LINK APP SCRIPT VÀO ĐÂY -->
       <iframe
         id="appFrame"
         src="https://script.google.com/macros/s/AKfycbw9KYVC9Th1qKx4lXpUBpm1m6InceMGw9vpWt1kj7aNv1fNPDVg_R-LeZrIQRfuqtr8/exec"
@@ -117,14 +116,17 @@
         <div class="fallback">
           Trình duyệt của bạn đang tắt JavaScript.  
           Vui lòng truy cập trực tiếp: <br />
-          <a href="https://script.google.com/macros/s/AKfycbw9KYVC9Th1qKx4lXpUBpm1m6InceMGw9vpWt1kj7aNv1fNPDVg_R-LeZrIQRfuqtr8/exec">Mở app báo cáo hàng hóa</a>
+          <a href="https://script.google.com/macros/s/AKfycbw9KYVC9Th1qKx4lXpUBpm1m6InceMGw9vpWt1kj7aNv1fNPDVg_R-LeZrIQRfuqtr8/exec">
+            Mở app báo cáo hàng hóa
+          </a>
         </div>
       </noscript>
     </main>
   </div>
 
   <script>
-    // Nếu iframe bị chặn (một số cấu hình bảo mật), cho nút mở trực tiếp
+    const APP_URL = "https://script.google.com/macros/s/AKfycbw9KYVC9Th1qKx4lXpUBpm1m6InceMGw9vpWt1kj7aNv1fNPDVg_R-LeZrIQRfuqtr8/exec";
+
     const frame = document.getElementById('appFrame');
     frame.addEventListener('error', () => {
       const main = document.querySelector('.shell-body');
@@ -133,7 +135,7 @@
           Không nhúng được App Script vào khung hiển thị.<br/>
           Bấm nút dưới đây để mở trực tiếp:
           <br/>
-          <button onclick="window.location.href='https://script.google.com/macros/s/AKfycbw9KYVC9Th1qKx4lXpUBpm1m6InceMGw9vpWt1kj7aNv1fNPDVg_R-LeZrIQRfuqtr8/exec'">
+          <button onclick="window.location.href='${APP_URL}'">
             Mở app báo cáo
           </button>
         </div>
